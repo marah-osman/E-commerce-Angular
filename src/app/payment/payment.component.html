@@ -1,0 +1,177 @@
+<main>
+    <!-- Start breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-start  rounded bg-white p-3 my-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item"><a style="text-decoration: none;" [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a></li>
+                      <li class="breadcrumb-item"><a style="text-decoration: none;" [routerLink]="['/products']" routerLinkActive="router-link-active">products</a></li>
+                      <li class="breadcrumb-item"><a style="text-decoration: none;" [routerLink]="['/cart']" routerLinkActive="router-link-active">cart</a></li>
+                      <li class="breadcrumb-item active"  aria-current="page">Payment</li>
+                    </ol>
+                  </nav>
+            </div>
+        </div>
+    </section>
+    <!-- end breadcrumb -->
+    <section class="payment">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="payment-form bg-white p-4">
+                        <h2 class="special-heading fw-bold">Billing Details</h2>
+                        <form [formGroup]="paymentForm" (ngSubmit)="addorder()" >
+                            <div class="d-flex">
+                                <div class="form-group w-50 m-2">
+                                    <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold"  >First Name</label>
+                                    <input  formControlName="firstname" [class.is-invalid]=" firstname?.invalid &&  firstname?.touched" type="text" class="form-control " placeholder="First Name">
+                                    <div *ngIf="(firstname?.invalid &&  firstname?.touched)">
+                                        <small class="text-danger" *ngIf=" firstname?.errors?.['required']">First Name is required</small>
+                                    </div>
+                                </div>
+                                <div class="form-group w-50 m-2">
+                                    <label for="lastName" class="form-label fs-5 fw-bold"  >Last Name</label>
+                                    <input formControlName="lastname"  [class.is-invalid]=" lastname?.invalid &&  lastname?.touched" type="text" class="form-control " id="lastName" placeholder="Last Name">
+                                    <div *ngIf="(lastname?.invalid &&  lastname?.touched)">
+                                        <small class="text-danger" *ngIf=" lastname?.errors?.['required']">last Name is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group  m-2">
+                                <label for="email" class="form-label fs-5 fw-bold" >Email</label>
+                                <input formControlName="email" [class.is-invalid]="email?.invalid && email?.touched" type="text" class="form-control " id="email">
+                                <div *ngIf="email?.invalid && email?.touched">
+                                    <small class="text-danger" *ngIf="email?.errors?.['required']"> Email is Required</small>
+                                    <small class="text-danger" *ngIf="email?.errors?.['pattern']"  > Email should be in form xxx@gmail.com </small>
+                                   </div>
+                            </div>
+                            <div class="form-group  m-2">
+                                <label for="Phone" class="form-label fs-5 fw-bold" >Phone</label>
+                                <input formControlName="Phone" [class.is-invalid]="Phone?.invalid && Phone?.touched" type="text" class="form-control " id="Phone">
+                                <div *ngIf="(Phone?.invalid &&  Phone?.touched)">
+                                    <small class="text-danger" *ngIf=" Phone?.errors?.['required']">Phone is required</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="form-group w-50 m-2">
+                                    <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold"  >country</label>
+                                    <input formControlName="country" [class.is-invalid]="country?.invalid && country?.touched"  type="text" class="form-control " placeholder="">
+                                    <div *ngIf="(country?.invalid &&  country?.touched)">
+                                        <small class="text-danger" *ngIf=" country?.errors?.['required']">country is required</small>
+                                    </div>
+                                </div>
+                                <div class="form-group w-50 m-2">
+                                    <label for="lastName" class="form-label fs-5 fw-bold"  >Region</label>
+                                    <input formControlName="region" [class.is-invalid]="region?.invalid && region?.touched"   type="text" class="form-control " id="lastName" placeholder="">
+                                    <div *ngIf="(region?.invalid &&  region?.touched)">
+                                        <small class="text-danger" *ngIf=" region?.errors?.['required']">region is required</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="form-group w-50 m-2">
+                                    <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold"  >city</label>
+                                    <input formControlName="city" [class.is-invalid]="city?.invalid && city?.touched" type="text" class="form-control " placeholder="">
+                                    <div *ngIf="(city?.invalid &&  city?.touched)">
+                                        <small class="text-danger" *ngIf=" city?.errors?.['required']">city is required</small>
+                                    </div>
+                                </div>
+                                <div class="form-group w-50 m-2">
+                                    <label for="lastName" class="form-label fs-5 fw-bold"  >Postal/Zip Code </label>
+                                    <input formControlName="zipcode"  type="text" class="form-control " id="lastName" placeholder="">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group  m-2">
+                                <label for="street" class="form-label fs-5 fw-bold" >Street</label>
+                                <input formControlName="street" [class.is-invalid]="street?.invalid && street?.touched" type="text" class="form-control " id="street">
+                                <div *ngIf="(street?.invalid &&  street?.touched)">
+                                    <small class="text-danger" *ngIf=" street?.errors?.['required']">street is required</small>
+                                </div>
+                            </div>
+                            <h2 class="special-heading fw-bold">Payment Method</h2>
+                            <div class="p-3 border rounded">
+                                <div class="form-check py-2">
+                                    <input formControlName="subscribewhenreciving" (click)="resetvisaValidation()" name="chkOffers" class="form-check-input" type="radio" value="" id="receive" >
+                                    <label class="form-check-label" for="receive">
+                                        Paiement when recieving
+                                    </label>
+                                  </div>
+                                  <div class="form-check py-2">
+                                    <input  (click)="setvisaValidation()"  name="chkOffers" formControlName="subscribe" class="form-check-input" type="radio" value="" >
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Pay with Visa
+                                    </label>
+                                  </div>
+                            </div> 
+                            <div class="border rounded my-4 p-3" *ngIf="ckecked">
+                                <h5 class="special-heading fw-bold">Payment Information</h5>
+
+                                <div class="d-flex">
+                                    <div class="form-group w-50 m-2">
+                                        <label for="lastName" class="form-label fs-5 fw-bold"  >Card Nolder </label>
+                                        <input formControlName="cardholder"  [class.is-invalid]="cardholder?.invalid && cardholder?.touched"  type="text" class="form-control " id="lastName" placeholder="">
+                                        <small class="text-danger" *ngIf="cardholder?.invalid && cardholder?.touched"> Card Holder is required</small> 
+                                    </div>
+                                    <div class="form-group w-50 m-2">
+                                        <label for="lastName" class="form-label fs-5 fw-bold"  >Card Number </label>
+                                        <input formControlName="cardnum"  [class.is-invalid]="cardnum?.invalid && cardnum?.touched"  type="text" class="form-control " id="lastName" placeholder="">
+                                        <small class="text-danger" *ngIf="cardnum?.invalid && cardnum?.touched"> Card Number is required</small> 
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="form-group w-50 m-2">
+                                        <label for="exampleFormControlInput1" class="form-label fs-5 fw-bold"  >Expiration Date</label>
+                                        <input formControlName="expirationdate"  [class.is-invalid]="expirationdate?.invalid && expirationdate?.touched"  type="text" class="form-control " placeholder="">
+                                        <small class="text-danger" *ngIf="expirationdate?.invalid && expirationdate?.touched"> Expiration date is required</small> 
+                                    </div>
+                                    <div class="form-group w-50 m-2">
+                                        <label for="lastName" class="form-label fs-5 fw-bold"  >cvv/cvc </label>
+                                        <input formControlName="cvv"   [class.is-invalid]="cvv?.invalid && cvv?.touched"  type="text" class="form-control " id="lastName" placeholder="">
+                                        <small class="text-danger" *ngIf="cvv?.invalid && cvv?.touched"> cvv/cvc is required</small> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center">
+                                <button [disabled]="paymentForm.invalid" class="btn btn-primary w-50">Confirm Order</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-md-5">
+                    <div class="payment bg-white p-4">
+                    <h2 class="special-heading fw-bold">Your Order</h2>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Count</th>
+                            <th scope="col">Total Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of newCartItems;index as i">
+                            <td><img style="width: 100px;height: 100px;" [src]="item.image"></td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.count}}</td>
+                            <td>{{item.totalPrice}}</td>
+
+                          </tr>
+                          <tr>
+                            <td colspan="4"> Total :{{totalPriceOfAllItems}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </section>
+</main>

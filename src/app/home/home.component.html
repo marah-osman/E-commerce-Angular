@@ -1,0 +1,448 @@
+
+        <!-- Start Top-Nav Bar -->
+        <div class="bottom-nav d-none d-lg-block">
+            <div class="container">
+                <ul class="list-unstyled d-flex align-items-center justify-content-center m-0">
+                    <li class="px-3 py-4 fw-bold fs-lg "><a routerLink="/products" routerLinkActive="router-link-active" >All Categories</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a [routerLink]="['/category/mens-shirts']" routerLinkActive="router-link-active" >Mens Fashion</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a  [routerLink]="['/category/womens-dresses']" routerLinkActive="router-link-active">Women Fashion</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a [routerLink]="['/category/home-decoration']" routerLinkActive="router-link-active">Home Decore</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a [routerLink]="['/category/furniture']" routerLinkActive="router-link-active">furniture</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a [routerLink]="['/category/skincare']" routerLinkActive="router-link-active">skincare</a></li>
+                    <li class="px-3 py-4 fw-bold fs-lg"><a [routerLink]="['/category/womens-jewellery']" routerLinkActive="router-link-active">jewellery</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+        <!-- End To Nav-Bar -->
+        <!--Start Slider  -->
+
+        <div class="slider">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner"  data-bs-interval="1000">
+                  <div class="overlay"></div>
+                  <div class="carousel-item active ">
+                    
+                    <img src="../../assets/images/main_page_slider/men_fashion.jpg" class="d-block w-100" alt="Men Fashion">
+                    <div class="carousel-caption d-none d-md-block wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">
+                      <h2>Trending Men's Fashion</h2>
+                       <button class="custom-btn">Shop Now!</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/images/main_page_slider/women_fashion.jpg" class="d-block w-100" alt="Women Fashion">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Trending Women's Fashion</h2>
+                        <button class="custom-btn">Shop Now!</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../assets/images/main_page_slider/home_decore.jpg" class="d-block w-100" alt="Home Decore">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Home Decore</h2>
+                        <button class="custom-btn">Shop Now!</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+        </div>
+
+        <!-- End Slider -->
+
+   <!-- Start Categories -->
+    <main>
+        <section class="categories py-5 ">
+           <div class="container">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/men.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Men's Fashion</h3>  
+                                 <a [routerLink]="['/category/mens-shirts']" routerLinkActive="router-link-active" >Shop Now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/women-desses.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Women's Fashion</h3>  
+                                <a [routerLink]="['/category/womens-dresses']" routerLinkActive="router-link-active" >Shop Now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/smart-phones.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Smart Phones </h3>  
+                                <a [routerLink]="['/category/smartphones']" routerLinkActive="router-link-active" >Shop Now!</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/laptops.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Laptops</h3>  
+                                 <a [routerLink]="['/category/laptops']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                          
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/watches.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Watches</h3>  
+                                <a [routerLink]="['/category/mens-watches']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/sunglasses.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Sunglasses</h3>  
+                                <a [routerLink]="['/category/sunglasses']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/automotive.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Automotive</h3>  
+                                <a [routerLink]="['/category/automotive']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/motorcycle.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Motocycle</h3>  
+                                <a [routerLink]="['/category/motorcycle']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/furnature.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Furniture</h3>  
+                                <a [routerLink]="['/category/furniture']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/groceries.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Groceries</h3>  
+                                <a [routerLink]="['/category/groceries']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="category-box wow bounceInUp">
+                        <div class="category">
+                            <div class="overlay"></div>
+                            <div class="category-image">
+                                <img src="../../assets/images/catrgories/skincare.jpg">
+                            </div>
+                            <div class="category-name">
+                                <h3>Skin Care</h3>  
+                                <a [routerLink]="['/category/skincare']" routerLinkActive="router-link-active" >Shop Now!</a>
+                              
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+              </owl-carousel-o>
+            
+           </div>
+        </section>
+
+
+
+        <!-- High Rated Products -->
+        <section class="high-rate-products py-5">
+            <div class="container">
+                <h2 class="special-heading fw-bold p-4">High Rated </h2>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                        <div class="product-box p-2 m-2">
+                            <div class="product">
+                                <div class="overlay"></div>
+                                <div class="product-image">
+                                    <img src="../../assets/images/catrgories/men.jpg">
+                                </div>
+                                <div class="product-operations d-flex">
+                                    <div class="add-to-cart p-3 ">
+                                        <i class="fa-light fa-cart-shopping fa-2x"></i>
+                                    </div>
+                                    <div class="save p-3 ">
+                                        <i class="fa-light fa-heart fa-2x"></i>
+                                    </div>
+                                    <div class="details p-3 ">
+                                        <i class="fa-light fa-arrow-right fa-2x"></i>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info py-3">
+                                <div class="product-name px-2 pt-2">
+                                    <h4 class="d-block m-0">Product Name</h4>
+                      
+                                </div>
+                                <div class="product-price px-2 pt-3 d-flex align-items-center  ">
+                                   <span class="new-price">EGP <span >3599.00.0</span></span>
+                                   <span class="old-price ">EGP 3999.00</span>
+                                   
+                                </div>
+                                <div class="product-discount-rate px-2 pt-3 d-flex justify-content-between">
+                                    <span class="discount">11% OFF</span>
+                                    <span class="rate "><i class="fa-solid fa-star-sharp"></i>4.9 <span>(21)</span></span>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="product-box p-2 m-2">
+                            <div class="product">
+                                <div class="overlay"></div>
+                                <div class="product-image">
+                                    <img src="../../assets/images/catrgories/men.jpg">
+                                </div>
+                                <div class="product-operations d-flex">
+                                    <div class="add-to-cart p-3 ">
+                                        <i class="fa-light fa-cart-shopping fa-2x"></i>
+                                    </div>
+                                    <div class="save p-3 ">
+                                        <i class="fa-light fa-heart fa-2x"></i>
+                                    </div>
+                                    <div class="details p-3 ">
+                                        <i class="fa-light fa-arrow-right fa-2x"></i>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info py-3">
+                                <div class="product-name px-2 pt-2">
+                                    <h4 class="d-block m-0">Product Name</h4>
+                      
+                                </div>
+                                <div class="product-price px-2 pt-3 d-flex align-items-center  ">
+                                   <span class="new-price">EGP <span >3599.00.0</span></span>
+                                   <span class="old-price ">EGP 3999.00</span>
+                                   
+                                </div>
+                                <div class="product-discount-rate px-2 pt-3 d-flex justify-content-between">
+                                    <span class="discount">11% OFF</span>
+                                    <span class="rate "><i class="fa-solid fa-star-sharp"></i>4.9 <span>(21)</span></span>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="product-box p-2 m-2">
+                            <div class="product">
+                                <div class="overlay"></div>
+                                <div class="product-image">
+                                    <img src="../../assets/images/catrgories/men.jpg">
+                                </div>
+                                <div class="product-operations d-flex">
+                                    <div class="add-to-cart p-3 ">
+                                        <i class="fa-light fa-cart-shopping fa-2x"></i>
+                                    </div>
+                                    <div class="save p-3 ">
+                                        <i class="fa-light fa-heart fa-2x"></i>
+                                    </div>
+                                    <div class="details p-3 ">
+                                        <i class="fa-light fa-arrow-right fa-2x"></i>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info py-3">
+                                <div class="product-name px-2 pt-2">
+                                    <h4 class="d-block m-0">Product Name</h4>
+                      
+                                </div>
+                                <div class="product-price px-2 pt-3 d-flex align-items-center  ">
+                                   <span class="new-price">EGP <span >3599.00.0</span></span>
+                                   <span class="old-price ">EGP 3999.00</span>
+                                   
+                                </div>
+                                <div class="product-discount-rate px-2 pt-3 d-flex justify-content-between">
+                                    <span class="discount">11% OFF</span>
+                                    <span class="rate "><i class="fa-solid fa-star-sharp"></i>4.9 <span>(21)</span></span>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="product-box p-2 m-2">
+                            <div class="product">
+                                <div class="overlay"></div>
+                                <div class="product-image">
+                                    <img src="../../assets/images/catrgories/men.jpg">
+                                </div>
+                                <div class="product-operations d-flex">
+                                    <div class="add-to-cart p-3 ">
+                                        <i class="fa-light fa-cart-shopping fa-2x"></i>
+                                    </div>
+                                    <div class="save p-3 ">
+                                        <i class="fa-light fa-heart fa-2x"></i>
+                                    </div>
+                                    <div class="details p-3 ">
+                                        <i class="fa-light fa-arrow-right fa-2x"></i>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info py-3">
+                                <div class="product-name px-2 pt-2">
+                                    <h4 class="d-block m-0">Product Name</h4>
+                      
+                                </div>
+                                <div class="product-price px-2 pt-3 d-flex align-items-center  ">
+                                   <span class="new-price">EGP <span >3599.00.0</span></span>
+                                   <span class="old-price ">EGP 3999.00</span>
+                                   
+                                </div>
+                                <div class="product-discount-rate px-2 pt-3 d-flex justify-content-between">
+                                    <span class="discount">11% OFF</span>
+                                    <span class="rate "><i class="fa-solid fa-star-sharp"></i>4.9 <span>(21)</span></span>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="product-box p-2 m-2">
+                            <div class="product">
+                                <div class="overlay"></div>
+                                <div class="product-image">
+                                    <img src="../../assets/images/catrgories/men.jpg">
+                                </div>
+                                <div class="product-operations d-flex">
+                                    <div class="add-to-cart p-3 ">
+                                        <i class="fa-light fa-cart-shopping fa-2x"></i>
+                                    </div>
+                                    <div class="save p-3 ">
+                                        <i class="fa-light fa-heart fa-2x"></i>
+                                    </div>
+                                    <div class="details p-3 ">
+                                        <i class="fa-light fa-arrow-right fa-2x"></i>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-info py-3">
+                                <div class="product-name px-2 pt-2">
+                                    <h4 class="d-block m-0">Product Name</h4>
+                      
+                                </div>
+                                <div class="product-price px-2 pt-3 d-flex align-items-center  ">
+                                   <span class="new-price">EGP <span >3599.00.0</span></span>
+                                   <span class="old-price ">EGP 3999.00</span>
+                                   
+                                </div>
+                                <div class="product-discount-rate px-2 pt-3 d-flex justify-content-between">
+                                    <span class="discount">11% OFF</span>
+                                    <span class="rate "><i class="fa-solid fa-star-sharp"></i>4.9 <span>(21)</span></span>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </ng-template>
+                  
+                  </owl-carousel-o>
+              
+            </div>
+         </section>
+        
+    </main>
+    
+   <!-- End Categories -->
